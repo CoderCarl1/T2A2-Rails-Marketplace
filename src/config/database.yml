@@ -27,13 +27,13 @@ default: &default
 
 development:
   <<: *default
-  database: Tattoo_development
+  database: T2A2store_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: Tattoo
+  #username: T2A2store
 
   # The password associated with the postgres role (username).
   #password:
@@ -61,7 +61,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: Tattoo_test
+  database: T2A2store_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -84,6 +84,6 @@ test:
 #
 production:
   <<: *default
-  database: Tattoo_production
-  username: Tattoo
-  password: <%= ENV['TATTOO_DATABASE_PASSWORD'] %>
+  database: T2A2store_production
+  username: T2A2store
+  password: <%= ENV['T2A2STORE_DATABASE_PASSWORD'] %>
