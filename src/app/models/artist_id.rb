@@ -1,0 +1,2 @@
+class ArtistId < ApplicationRecord
+end

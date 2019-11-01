@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tattoo_id: MyString
+  customer_id: one
+  artist_id: one
+
+two:
+  tattoo_id: MyString
+  customer_id: two
+  artist_id: two
