@@ -79,4 +79,12 @@ section #cancel_account {
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
+
+.card {
+  width: auto;
+  height: auto;
+  border: 1px ridge black;
+  color: black;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 /*# sourceMappingURL=store.css.map */

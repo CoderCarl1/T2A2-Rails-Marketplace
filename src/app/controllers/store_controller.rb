@@ -1,5 +1,5 @@
 class StoreController < ApplicationController
-  before_action :authenticate_user! , only: [:show, :new, :edit, :create, :update, :destroy]
+  before_action :authenticate_user! , only: [:new, :edit, :create, :update, :destroy]
   before_action :find_tattoo, only: [:show, :edit, :update, :destroy]
   before_action :authorise, only: [:edit, :update, :destroy]
 
@@ -67,7 +67,7 @@ class StoreController < ApplicationController
   end
 
   def tattoo_params
-    params.require(:tattoo).permit(:content, :image)
+    params.require(:tattoo).permit(:title, :description, :image)
   end
 
 end
