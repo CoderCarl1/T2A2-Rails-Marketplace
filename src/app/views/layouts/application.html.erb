@@ -4,27 +4,25 @@
     <title>Tattoo</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
 
   <body>
+  <nav id="nav">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-  <nav>
     <p>
     <% if user_signed_in? %>
-       <p>Welcome, <%= current_user.username%></p>
+       <p>Welcome, <%= current_user.username%>!</p>
        <h4><%= link_to 'Edit Account', edit_user_registration_path%></h4>
        <% else %>
-       <h4><%= link_to 'login', new_user_session_path%> <%= link_to 'signup', new_user_registration_path%></h4>
+       <h4><%= link_to 'login', new_user_session_path%></h4>
+        <h4><%= link_to 'signup', new_user_registration_path%></h4>
        
        <%end%>
   </p>
-
     <p>
         <% if user_signed_in? %>
        <p>
@@ -32,7 +30,10 @@
        <%end%>
   </p>
   </nav>
-    <%= yield %>
+
+  <section id="content">
+      <%= yield %>
+  </section>
   </body>
 </html>
 

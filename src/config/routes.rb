@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :store
+  
   devise_for :users, controllers: {
     application: 'application'
   }

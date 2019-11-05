@@ -2,7 +2,7 @@ class StoreController < ApplicationController
   # before_action :authenticate_user!
 
   def index
-    
+    @tattoos = Tattoo.all
   end
   def show
   end
@@ -17,7 +17,7 @@ class StoreController < ApplicationController
   end
 
   def tattoo_params
-    params.require(:tattoo).permit(, :content, :image)
+    params.require(:tattoo).permit(:content, :image)
   end
 
 end

@@ -1,2 +1,3 @@
 class Tattoo < ApplicationRecord
+
 end
