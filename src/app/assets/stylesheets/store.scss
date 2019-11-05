@@ -30,9 +30,11 @@ body {
     background-color: rgb(243, 204, 204);
 }
 #nav {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    float: right;
     background-color: white;
     border: 1px solid rgb(2, 2, 2);
 }

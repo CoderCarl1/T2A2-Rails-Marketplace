@@ -17,17 +17,17 @@
    <% @tattoos.each do |tattoo| %>
      <tr>
        <td>
-         <figure class="image is-square">
+         <figure>
            <%= tattoo.image.attached? ? image_tag(tattoo.image) : '' %>
          </figure>
        </td>
        <td><%= tattoo.title %></td>
-       <td><%= tattoo.content %></td>
-       <td><%= tattoo.user.email %></td>
-       <td><%= link_to 'Show', tattoo, class: 'button is-small is-outline is-primary is-rounded' %></td>
+       <td><%= tattoo.description %></td>
+       <td><%= tattoo.user.username %></td>
+       <td><%= link_to 'Show', tattoo%></td>
        <% if tattoo.can_edit?(current_user) %>
-       <td><%= link_to 'Edit', edit_tattoo_path(tattoo), class: 'button is-small is-outline is-warning is-rounded' %></td>
-       <td><%= link_to 'Destroy', tattoo, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-small is-outline is-danger is-rounded' %></td>
+       <td><%= link_to 'Edit', edit_tattoo_path(tattoo)%></td>
+       <td><%= link_to 'Destroy', tattoo, method: :delete, data: { confirm: 'Are you sure?' }%></td>
        <% end %>
      </tr>
    <% end %>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New tattoo', new_tattoo_path %>
+
