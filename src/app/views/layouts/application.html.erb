@@ -11,28 +11,7 @@
 
 
   <body>
-  <nav id="nav">
-    <p class="alert"><%= alert %></p>
-    <p id="notice"><%= notice %></p>
-    <p>
-    <p><%= link_to 'HOME', root_path%></p>
-    <% if user_signed_in? %>
-       <p>Welcome, <%= current_user.username%>!</p>
-       <h4><%= link_to 'Edit Account', edit_user_registration_path%></h4>
-       <h4><%= link_to 'Post a New AWESOME Tattoo', new_tattoo_path%></h4>
-       <% else %>
-       <h4><%= link_to 'login', new_user_session_path%></h4>
-        <h4><%= link_to 'signup', new_user_registration_path%></h4>
-       
-       <%end%>
-  </p>
-    <p>
-        <% if user_signed_in? %>
-       <p>
-        <%= link_to 'Logout', destroy_user_session_path, method: 'delete', class: 'button is-warning'%></p>
-       <%end%>
-  </p>
-  </nav>
+  <%= render "layouts/nav"%>
 
   <section id="content">
       <%= yield %>

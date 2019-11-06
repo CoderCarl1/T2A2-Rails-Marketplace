@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   has_many :tattoos, foreign_key: 'artist_id'
   has_many :customers, through: :tattoos
-  has_many :reviews, through: :tattoos
+  # has_many :reviews, through: :tattoos
 
 
   has_many :tattoos_purchased, class_name: 'Tattoo', foreign_key: 'customer_id'
