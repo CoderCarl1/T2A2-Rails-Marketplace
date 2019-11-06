@@ -1,5 +1,5 @@
+<section class="card">
 <%= form_with(model: tattoo, local: true) do |form| %>
-<div class="card">
   <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title %>
@@ -10,9 +10,14 @@
     <%= form.text_field :description %>
   </div>
 
+  <div class="field">
+  <p><%= image_tag(@tattoo.images[0], height: 250) if @tattoo.images.attached? %></p>
+    <%= form.label :images %>
+    <%= form.file_field :images %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
-  </div>
 <% end %>
+</section>

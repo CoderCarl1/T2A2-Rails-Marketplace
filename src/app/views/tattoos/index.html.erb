@@ -18,7 +18,11 @@
 <tbody>
    <% @tattoos.each do |tattoo| %>
      <tr>
-
+       <td>
+         <figure>
+           <%= tattoo.images.attached? ? image_tag(tattoo.images[0], height: 100) : '' %>
+         </figure>
+       </td>
        <td><%= tattoo.title %></td>
        <td><%= tattoo.description %></td>
        <td><%= tattoo.user.username %></td>

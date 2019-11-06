@@ -1,6 +1,15 @@
+
+
 <section class="card">
 <h2><%= @tattoo.title %></h2>
 <h4>By <%= @tattoo.user.username.capitalize %></h4>
 <p><%= @tattoo.description %></p>
+<p><%= image_tag(@tattoo.images[0], width: 250) if @tattoo.images.attached? %></p>
 
+
+    <section class="bottom-menu">
+    <%= link_to 'Edit', edit_tattoo_path(@tattoo)%>
+    <%= link_to 'Home', tattoos_path %>
+    <section>
+</section>
 

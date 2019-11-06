@@ -21,7 +21,7 @@ class TattoosController < ApplicationController
   def create
     @tattoo = Tattoo.new(tattoo_params)
     @tattoo.user = current_user
-    # @tattoo.image.attach(tattoo_params[:image])
+    @tattoo.images.attach(tattoo_params[:images])
 
     respond_to do |format|
       if @tattoo.save
@@ -37,7 +37,8 @@ class TattoosController < ApplicationController
   def update
     respond_to do |format|
       if @tattoo.update(tattoo_params)
-        # @tattoo.image.attach(tattoo_params[:image])
+        @tattoo.images.attach(tattoo_params[:images]) if tattoo_params[:images]
+
         format.html { redirect_to @tattoo, notice: 'Your tattoo has been successfully updated.' }
         format.json { render :show, status: :ok, location: @tattoo }
       else
@@ -68,6 +69,6 @@ class TattoosController < ApplicationController
   end
 
   def tattoo_params
-    params.require(:tattoo).permit(:title, :description, :image)
+    params.require(:tattoo).permit(:title, :description, :images)
   end
 end
