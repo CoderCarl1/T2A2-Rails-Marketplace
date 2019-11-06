@@ -10,28 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_04_233639) do
+ActiveRecord::Schema.define(version: 2019_11_05_222248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "images", force: :cascade do |t|
-    t.string "src"
-    t.bigint "tattoo_id_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["tattoo_id_id"], name: "index_images_on_tattoo_id_id"
-  end
-
-  create_table "reviews", force: :cascade do |t|
-    t.text "review"
-    t.bigint "customer_id_id"
-    t.bigint "tattoo_id_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["customer_id_id"], name: "index_reviews_on_customer_id_id"
-    t.index ["tattoo_id_id"], name: "index_reviews_on_tattoo_id_id"
-  end
 
   create_table "roles", force: :cascade do |t|
     t.string "name"
@@ -44,20 +26,12 @@ ActiveRecord::Schema.define(version: 2019_11_04_233639) do
   end
 
   create_table "tattoos", force: :cascade do |t|
-    t.bigint "customer_id_id"
-    t.string "title", null: false
-    t.string "description", null: false
-    t.decimal "price", precision: 10, scale: 2, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["customer_id_id"], name: "index_tattoos_on_customer_id_id"
-  end
-
-  create_table "transactions", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_transactions_on_user_id"
+    t.index ["user_id"], name: "index_tattoos_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -84,9 +58,5 @@ ActiveRecord::Schema.define(version: 2019_11_04_233639) do
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
-  add_foreign_key "images", "users", column: "tattoo_id_id"
-  add_foreign_key "reviews", "users", column: "customer_id_id"
-  add_foreign_key "reviews", "users", column: "tattoo_id_id"
-  add_foreign_key "tattoos", "users", column: "customer_id_id"
-  add_foreign_key "transactions", "users"
+  add_foreign_key "tattoos", "users"
 end
