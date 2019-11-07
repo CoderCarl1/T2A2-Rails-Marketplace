@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'orders/:tattoo_id', to: "orders#new", as: "new_order"
   resources :store
   resources :tattoos
   

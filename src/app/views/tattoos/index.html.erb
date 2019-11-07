@@ -26,10 +26,10 @@
        <td><%= tattoo.title %></td>
        <td><%= tattoo.description %></td>
        <td><%= tattoo.user.username %></td>
-       <td><%= link_to 'Show', tattoo%></td>
+       <td><%= link_to 'More information', tattoo%></td>
        <% if tattoo.can_edit?(current_user) %>
        <td><%= link_to 'Edit', edit_tattoo_path(tattoo)%></td>
-       <td><%= link_to 'Destroy', tattoo, method: :delete, data: { confirm: 'Are you sure?' }%></td>
+       <td><%= link_to 'Delete', tattoo, method: :delete, data: { confirm: 'Are you sure?' }%></td>
        <% end %>
      </tr>
    <% end %>

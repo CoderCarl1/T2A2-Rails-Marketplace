@@ -11,7 +11,14 @@
   </div>
 
   <div class="field">
-  <p><%= image_tag(@tattoo.images[0], height: 250) if @tattoo.images.attached? %></p>
+    <%= form.label :price, "Amount I will pay to have this made" %>
+    <%= form.number_field :price, step: 2 %>
+  </div>
+
+  <div class="field">
+    <h2>Current Image </h2>
+    <p><%= image_tag(@tattoo.images[0], height: 250) if @tattoo.images.attached? %></p>
+    <h2>New Image</h2>
     <%= form.label :images %>
     <%= form.file_field :images %>
   </div>

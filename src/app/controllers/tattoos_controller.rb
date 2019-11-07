@@ -69,6 +69,6 @@ class TattoosController < ApplicationController
   end
 
   def tattoo_params
-    params.require(:tattoo).permit(:title, :description, :images)
+    params.require(:tattoo).permit(:title, :description, :images, :price)
   end
 end

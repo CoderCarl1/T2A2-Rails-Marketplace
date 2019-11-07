@@ -1,10 +1,12 @@
 
 
 <section class="card">
-<h2><%= @tattoo.title %></h2>
-<h4>By <%= @tattoo.user.username.capitalize %></h4>
+<h2>Title: <%= @tattoo.title %></h2>
 <p><%= @tattoo.description %></p>
+<p>Amount I am happy to spend: <%= number_to_currency @tattoo.price %></p>
+<%= link_to "Buy Now", new_order_path(@tattoo) %>
 <p><%= image_tag(@tattoo.images[0], width: 250) if @tattoo.images.attached? %></p>
+<h6>Tattoo wanted by: <%= @tattoo.user.username.capitalize %></h6>
 
 
     <section class="bottom-menu">
