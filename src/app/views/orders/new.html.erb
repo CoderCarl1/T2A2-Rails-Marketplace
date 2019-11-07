@@ -6,6 +6,7 @@
             <th>Title </th>
             <th>Description </th>
             <th>Price </th>
+            <th>Tattoo Sketch</th>
         </tr>
     </thead>
     <tbody>
@@ -13,7 +14,23 @@
             <td><%= @tattoo.title %> </td>
             <td> <%= @tattoo.description %></td>
             <td> <%= number_to_currency @tattoo.price %></td>
+            <td> <%= image_tag(@tattoo.images[0], height: 250) if @tattoo.images.attached? %></td>
         </tr>
     </tbody>
 </table>
-<button> Checkout Now </button>
+<button id="checkout"> Checkout Now </button>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    let stripe = Stripe('pk_test_w4vvJnDczqRVKC1Xf2Dtta3100fVbDcYJL')
+
+    function checkout() {
+        stripe.
+        redirectToCheckout({
+            sessionId: "<%= @session.id %>"
+        })
+        .then(result => alert(result));
+    }
+
+    document.querySelector("#checkout").addEventListener("click", checkout);
+</script>
