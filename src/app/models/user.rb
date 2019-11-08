@@ -17,6 +17,6 @@ class User < ApplicationRecord
   has_many :artists, through: :tattoos_purchased
 
   def assign_default_role
-    self.add_role(:user) if roles.blank?
+    self.add_role(:user) if self.roles.blank?
   end
 end

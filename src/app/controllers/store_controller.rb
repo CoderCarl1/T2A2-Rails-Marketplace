@@ -1,5 +1,5 @@
 class StoreController < ApplicationController
-#   before_action :authenticate_user! , only: [:new, :edit, :create, :update, :destroy]
+  before_action :authenticate_user! , only: [:user_index, :show]
 #   before_action :find_tattoo, only: [:show, :edit, :update, :destroy]
 #   before_action :authorise, only: [:edit, :update, :destroy]
 
@@ -7,11 +7,13 @@ class StoreController < ApplicationController
 #     @tattoos = Tattoo.all
 #   end
 def user_index
-  @posts = User.Tattoo.find(params[:id])
+  @posts = User.Tattoo.all
 end
   def show
     
   end
+def splashpage
+end
 
 #   def new
 #     @tattoo = Tattoo.new

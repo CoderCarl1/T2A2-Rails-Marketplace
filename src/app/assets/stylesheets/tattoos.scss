@@ -1,82 +1,71 @@
 // Place all the styles related to the store controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import 'bulma';
 
-*{
-    padding: 0;
-    margin: 0;
-}
+// a{
+//     padding: 2px;
+//     text-decoration: none;
+//     display: block;
+//     color: black;
+//     border: 1px solid black;
+//     background-color: rgb(96, 255, 189);
+//     border-radius: 5px;
+//     &:visited{
+//         color: black;
+//     }
+//     &:hover, &:focus{
+//         color: white;
+//         background-color: rgb(82, 94, 207);
+//     }
+// }
 
-a{
-    padding: 2px;
-    text-decoration: none;
-    display: block;
-    color: black;
-    border: 1px solid black;
-    background-color: rgb(96, 255, 189);
-    border-radius: 5px;
-    &:visited{
-        color: black;
-    }
-    &:hover, &:focus{
-        color: white;
-        background-color: rgb(82, 94, 207);
-    }
-}
-body {
-    width: 100%;
-    min-height: 100vh;
-    height: 100%;
-    background-color: rgb(243, 204, 204);
-}
-#nav {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    float: right;
-    background-color: white;
-    border: 1px solid rgb(2, 2, 2);
-}
-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    div{
-        margin-top: 3px;
-    }
-    h3{
-        padding: 1px;
-    }
-    #cancel_account{
-        flex-direction: row;
-        width: 100%;
-        justify-content: flex-start;
-    }
-}
-.bottom-menu{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
-    padding: 10px;
-    background-color: grey;
-    border: 1px solid black;
-}
-.card{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: auto;
-    min-width: 200px;
-    height: auto;
-    min-height: 400px;
-    // background-color: white;
-    border: 1px ridge black;
-    color: black;
-    background-color: rgba(255,255,255,.7);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
+
+  // .notice{
+
+  // }
+  // #alert{
+
+  // }
+// }
+// section {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   width: 100%;
+//   height: auto;
+//   div {
+//     margin-top: 3px;
+//   }
+//   h3 {
+//     padding: 1px;
+//   }
+//   #cancel_account {
+//     flex-direction: row;
+//     width: 100%;
+//     justify-content: flex-start;
+//   }
+// }
+// .card {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   width: auto;
+//   min-width: 200px;
+//   height: auto;
+//   min-height: 400px;
+//   // background-color: white;
+//   border: 1px ridge black;
+//   color: black;
+//   background-color: rgba(255, 255, 255, 0.7);
+//   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+//     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+//   .bottom-menu {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-around;
+//     width: 100%;
+//     padding: 10px;
+//     background-color: grey;
+//     border: 1px solid black;
+//   }
+// }

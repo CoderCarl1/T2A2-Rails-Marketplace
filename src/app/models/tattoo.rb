@@ -3,6 +3,6 @@ class Tattoo < ApplicationRecord
   has_many_attached :images
 
   def can_edit?(user)
-    return user == self.user || user.has_role?(:admin)
+    return user && (user == self.user || user.has_role?(:admin))  
   end
 end

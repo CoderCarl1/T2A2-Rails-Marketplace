@@ -1,5 +1,5 @@
 class TattoosController < ApplicationController
-  before_action :authenticate_user! , only: [:new, :edit, :create, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :update, :create, :destroy]
   before_action :find_tattoo, only: [:show, :edit, :update, :destroy]
   before_action :authorise, only: [:edit, :update, :destroy]
 

@@ -8,14 +8,16 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-
   <body>
   <%= render "layouts/nav"%>
 
-  <section id="content">
+  <section class="page-content">
       <%= yield %>
   </section>
+    <aside id=alerts>
+    <p class="alert"><%= alert %></p>
+    <p id="notice"><%= notice %></p>
+  <aside>
   </body>
 </html>
 
