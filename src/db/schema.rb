@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2019_11_07_042817) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.decimal "price", precision: 8, scale: 2
+    t.decimal "price", precision: 8, scale: 1
     t.index ["user_id"], name: "index_tattoos_on_user_id"
   end
 

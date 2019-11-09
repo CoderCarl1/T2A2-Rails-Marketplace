@@ -11,6 +11,7 @@ class TattoosController < ApplicationController
     @tattoo = Tattoo.find(params[:id])
   end
 
+
   def new
     @tattoo = Tattoo.new
   end
@@ -56,6 +57,15 @@ class TattoosController < ApplicationController
     end
   end
 
+  # def delete_image_attachment
+  #   @image = ActiveStorage::Attachment.find(params[:id])
+  #   # @image = 
+  #   @image.purge
+  #   redirect_back(fallback_location: tattoo_path)
+  # end
+
+
+
   private
   def find_tattoo
     @tattoo = Tattoo.find(params[:id])
@@ -69,6 +79,6 @@ class TattoosController < ApplicationController
   end
 
   def tattoo_params
-    params.require(:tattoo).permit(:title, :description, :images, :price)
+    params.require(:tattoo).permit(:title, :description, :price, images: [])
   end
 end

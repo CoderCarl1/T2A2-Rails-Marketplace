@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   # , to: "stores#splashpage"
 
   resources :stores
-  resources :tattoos
+  # resources :tattoos
+  resources :tattoos do
+    member do
+      delete :delete_image_attachment
+    end
+  end
   
   devise_for :users, controllers: {
     application: 'application'

@@ -15,6 +15,10 @@
 <tbody>
    <% @tattoo.each do |tattoo| %>
      <tr>
+       <%tattoo.images.each do |image|%>
+          <%= image_tag(tattoo.images[image])%>
+          <%= link_to "Remove", delete_image_attachment_post_url(@tattoo.images[image]), method: :delete_image_attachment, data: {confirm: "Are you sure?"} %>
+       <%end%>
        <td><%= tattoo.title %></td>
        <td><%= tattoo.description %></td>
        <td><%= tattoo.user.username %></td>

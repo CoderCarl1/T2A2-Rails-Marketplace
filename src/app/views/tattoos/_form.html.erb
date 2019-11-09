@@ -16,11 +16,19 @@
   </div>
 
   <div class="field">
-    <h2>Current Image </h2>
-    <p><%= image_tag(@tattoo.images[0], height: 250) if @tattoo.images.attached? %></p>
+    <h2>Current Image/s </h2>
+    <div>
+    <section id="edit-images">
+           <%(0...@tattoo.images.count).each do |image|%>
+          
+          <%= image_tag(@tattoo.images[image]
+          )%>
+       <%end%>
+    </section>
+    
     <h2>New Image</h2>
     <%= form.label :images %>
-    <%= form.file_field :images %>
+    <%= form.file_field :images, multiple: true %>
   </div>
 
   <div class="actions">

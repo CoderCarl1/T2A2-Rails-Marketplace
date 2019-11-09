@@ -1,5 +1,3 @@
-<h1>Tattoos#index</h1>
-<p>Find me in app/views/tattoos/index.html.erb</p>
 
 
 <h1>Tattoos</h1>
@@ -13,23 +11,23 @@
       <th>Artist</th>
       <th colspan="3"></th>
     </tr>
-</thead>
+  </thead>
 
 <tbody>
    <% @tattoos.each do |tattoo| %>
      <tr>
-       <td>
-         <figure>
-           <%= tattoo.images.attached? ? image_tag(tattoo.images[0], height: 100) : '' %>
-         </figure>
-       </td>
+       <%tattoo.images.each do |image|%>
+          
+          <%= image_tag(@tattoo.images[image]
+          )%>
+       <%end%>
        <td><%= tattoo.title %></td>
        <td><%= tattoo.description %></td>
        <td><%= tattoo.user.username %></td>
-       <td><%= link_to 'More information', tattoo%></td>
+       <td><%= link_to 'Show', tattoo%></td>
        <% if tattoo.can_edit?(current_user) %>
        <td><%= link_to 'Edit', edit_tattoo_path(tattoo)%></td>
-       <td><%= link_to 'Delete', tattoo, method: :delete, data: { confirm: 'Are you sure?' }%></td>
+       <td><%= link_to 'Destroy', tattoo, method: :delete, data: { confirm: 'Are you sure?' }%></td>
        <% end %>
      </tr>
    <% end %>
