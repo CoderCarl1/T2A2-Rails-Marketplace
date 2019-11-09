@@ -10,13 +10,15 @@
   </head>
   <body>
   <%= render "layouts/nav"%>
+  <section id="alert-space">
+    <p id="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    </section>
 
   <section class="page-content">
       <%= yield %>
   </section>
 
-    <p class="alert"><%= alert %></p>
-    <p id="notice"><%= notice %></p>
   </body>
 </html>
 

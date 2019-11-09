@@ -1,5 +1,35 @@
-<%= render 'form', tattoo: @tattoo %>
+
+<h1> New Posting</h1>
+<section class="new-card">
+<%= form_with(model: @tattoo, local: true) do |form| %>
+  <div class="title">
+    <%= form.label :title, "Title:" %>
+    <%= form.text_field :title %>
+  </div>
+
+    <div class="image">
+    <h2>New Image</h2>
+    <%= form.label :images %>
+    <%= form.file_field :images, multiple: true %>
+    <%= %>
+  </div>
+
+  <div class="description">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="price">
+    <%= form.label :price, "Amount I will pay to have this made" %>
+    <%= form.number_field :price, step: 2 %>
+  </div>
+
+  <div class="submit">
+    <%= form.submit %>
+  </div>
+<% end %>
+</section>
 
 <section class="bottom-menu">
-<%= link_to 'Home', tattoos_path %>
+<%= button_to 'Home', tattoos_path %>
 </section>

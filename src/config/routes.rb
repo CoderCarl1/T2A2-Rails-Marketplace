@@ -6,20 +6,20 @@ Rails.application.routes.draw do
   # get 'stores/splashpage'
   # , to: "stores#splashpage"
 
-  resources :stores
-  # resources :tattoos
-  resources :tattoos do
-    member do
-      delete :delete_image_attachment
-    end
-  end
+  # resources :stores
+  # resources :tattoos do
+  #   member do
+  #     delete :delete_image_attachment
+  #   end
+  # end
   
+  resources :tattoos
   devise_for :users, controllers: {
     application: 'application'
   }
   # root 'store#index'
-  # root 'tattoos#index'
-  root 'stores#index'
+  root 'tattoos#index'
+  # root 'stores#index'
   # resources :home, only: :index
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

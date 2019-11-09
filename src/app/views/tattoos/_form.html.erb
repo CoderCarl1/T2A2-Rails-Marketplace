@@ -1,21 +1,11 @@
-<section class="card">
+<section id="edit-card">
 <%= form_with(model: tattoo, local: true) do |form| %>
-  <div class="field">
+  <div class="title">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price, "Amount I will pay to have this made" %>
-    <%= form.number_field :price, step: 2 %>
-  </div>
-
-  <div class="field">
+    <div class="image">
     <h2>Current Image/s </h2>
     <div>
     <section id="edit-images">
@@ -31,7 +21,17 @@
     <%= form.file_field :images, multiple: true %>
   </div>
 
-  <div class="actions">
+  <div class="description">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="price">
+    <%= form.label :price, "Amount I will pay to have this made" %>
+    <%= form.number_field :price, step: 2 %>
+  </div>
+
+  <div class="submit">
     <%= form.submit %>
   </div>
 <% end %>

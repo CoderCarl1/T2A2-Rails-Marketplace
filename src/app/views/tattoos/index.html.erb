@@ -1,39 +1,22 @@
+<section id="splash">
 
-
-<h1>Tattoos</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Artist</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-<tbody>
+<section id="splash-tats">
    <% @tattoos.each do |tattoo| %>
-     <tr>
-       <%tattoo.images.each do |image|%>
-          
-          <%= image_tag(@tattoo.images[image]
-          )%>
-       <%end%>
-       <td><%= tattoo.title %></td>
-       <td><%= tattoo.description %></td>
-       <td><%= tattoo.user.username %></td>
-       <td><%= link_to 'Show', tattoo%></td>
+   <section class="card">
+        <section id="title">
+       <p><%= tattoo.title %></p>
+       </section>
+       <section id="image">
+       <p><%= image_tag(tattoo.images[0], width: 250, height: 160) if tattoo.images.attached? %></p>
+       </section>
+       <section id=card-buttons>
+       <%= link_to 'INFO', tattoo%>
        <% if tattoo.can_edit?(current_user) %>
-       <td><%= link_to 'Edit', edit_tattoo_path(tattoo)%></td>
-       <td><%= link_to 'Destroy', tattoo, method: :delete, data: { confirm: 'Are you sure?' }%></td>
+       <%= link_to 'EDIT', edit_tattoo_path(tattoo)%>
+       <%= link_to 'DELETE', tattoo, method: :delete, data: { confirm: 'Are you sure?' }%>
        <% end %>
-     </tr>
+       </section>
+       </section>
    <% end %>
- </tbody>
-</table>
-
-<br>
-
-
+   </section>
+</section>
