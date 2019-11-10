@@ -232,17 +232,35 @@ body {
   }
 }
 #edit-card{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 300px;
+  align-items: center;
+  justify-content: space-evenly;
   .title{
-
+    height: 50px;
+    width: auto;
   }
   .image{
+    height: 100%;
+    width: auto;
+  }
+  #edit-images{
+    height: 200px;
+    width: 40vw;
+    
+    overflow-x: scroll;
+    margin-bottom: 5px;
 
   }
   .description{
-    
+    height: 200px;
+    width: auto;
   }
   .price{
-
+    height: 50px;
+    width: auto;
   }
 }
 
@@ -316,9 +334,9 @@ body {
 }
 
 // this is for devise fields
-.row{
+.bottom-menu{
   width: 100%;
-  
+  justify-content: center;
   display: flex;
 
 }

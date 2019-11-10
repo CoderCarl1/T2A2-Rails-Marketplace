@@ -5,9 +5,9 @@
     <%= form.text_field :title %>
   </div>
 
-    <div class="image">
+    
     <h2>Current Image/s </h2>
-    <div>
+    
     <section id="edit-images">
            <%(0...@tattoo.images.count).each do |image|%>
           
@@ -16,11 +16,16 @@
        <%end%>
     </section>
     
+    <div class="image">
     <h2>New Image</h2>
     <%= form.label :images %>
     <%= form.file_field :images, multiple: true %>
-  </div>
+    <%= %>
+    </div>
 
+
+  </div>
+  </div>
   <div class="description">
     <%= form.label :description %>
     <%= form.text_field :description %>
